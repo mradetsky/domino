@@ -1,0 +1,39 @@
+﻿<div>
+
+    <table>
+        <tr>
+            <td>
+                <a href="" ng-click="rotateLeft()">left</a>
+                <a href="" ng-click="new()">new</a>
+                <a href="" ng-click="rotateRight()">right</a>
+                <div style="margin-left:100px; margin-right:100px">
+                    <div style="transform: rotate({{rotation}}deg); width: {{size*15+8}}px; height: {{size*30+16}}px">
+                        <div style="margin: 0 auto;">
+                            <div>
+                                <domino-part value="domino[0]" size="size" />
+                            </div>
+                            <div>
+                                <domino-part value="domino[1]" size="size" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+                Size:
+                <input type="range" ng-model="size" min="2" max="10" step="1" />
+                <br/>
+                Speed:
+                <input type="range" ng-model="speed" min="1" max="10" step="1" />
+            </td>
+            <td>
+                <div>
+                    <div ng-repeat="item in [1,2,3,4,5,6]" ng-click="selectPart(item)">
+                        <domino-part value="item" size="2" />
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
